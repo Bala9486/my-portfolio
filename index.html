@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SEO -->
+  <title>Balakumar H | Embedded Software Engineer – C &amp; Linux Systems</title>
+  <meta name="description" content="Portfolio of Balakumar H, an entry-level Embedded Software Engineer in Bengaluru. Projects in Embedded C, CAN bus firmware on PIC18F4580, Linux systems programming, socket networking and binary file parsing." />
+  <meta name="author" content="Balakumar H" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <meta property="og:title" content="Balakumar H | Embedded Software Engineer" />
+  <meta property="og:description" content="Embedded C, CAN bus firmware, Linux systems programming and networking projects." />
+  <meta property="og:type" content="website" />
+
+  <!-- Font: Inter (free, Google Fonts). Falls back to system fonts if offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Icon sprite (inline SVG, no external icon library needed) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Balakumar H – home">BH<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <svg class="icon icon-open"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close"><use href="#i-close"/></svg>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow reveal">Hello, I'm</p>
+          <h1 id="hero-title" class="reveal">Balakumar H</h1>
+          <p class="role reveal">Embedded Software Engineer <span class="sep">|</span> C &amp; Linux Systems</p>
+          <p class="hero-intro reveal">
+            I build C-based systems from the ground up: CAN-bus firmware on PIC18F4580 microcontrollers, a custom Unix shell,
+            socket servers and binary file parsers. I'm now looking for an entry-level Embedded Software or Firmware Engineer
+            role to move toward register-level, RTOS-based embedded work.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="#projects">View My Work</a>
+            <a class="btn btn-ghost" href="#contact">Contact Me</a>
+          </div>
+          <ul class="social reveal" aria-label="Social links">
+            <li><a href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg class="icon"><use href="#i-github"/></svg></a></li>
+            <li><a href="https://linkedin.com/in/balakumar-h-49a759222" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg class="icon"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="mailto:haribala8049@gmail.com" aria-label="Send an email"><svg class="icon"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <!-- Profile photo: replace images/profile.jpg to change it -->
+        <div class="hero-visual reveal">
+          <div class="photo-frame">
+            <img src="images/profile.jpg" alt="Portrait of Balakumar H" width="640" height="640" />
+          </div>
+</div>
+      </div>
+
+      <div class="container">
+        <dl class="stats reveal">
+          <div><dt>C-based projects</dt><dd>10</dd></div>
+          <div><dt>CAN-bus ECU nodes built</dt><dd>3</dd></div>
+          <div><dt>Govt. certified program</dt><dd>NSDC</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">About me</p>
+          <h2 id="about-title">Systems-level thinker, hands-on with C</h2>
+        </header>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm an Embedded Software Engineer with a B.E. in Electrical and Electronics Engineering. Over the past months I have
+              built 10 C-based projects covering linked-list arithmetic, binary file parsing, UDP/TCP networking, a custom Unix shell
+              with process and signal control, a lexical analyzer, and a three-node CAN-bus automotive dashboard.
+            </p>
+            <p>
+              I'm currently completing a Government of India (Skill India/NSDC)-certified Advanced Embedded Systems program
+              (QP: ELE/Q1501) at Emertxe, with daily practice in Linux, GDB and Git. My goal is to move from userspace systems
+              programming toward register-level, RTOS-based embedded work.
+            </p>
+          </div>
+          <ul class="about-cards">
+            <li class="card reveal"><h3>Embedded &amp; Firmware</h3><p>PIC18F4580, ADC, GPIO, UART, I2C, CAN bus, CLCD and seven-segment displays.</p></li>
+            <li class="card reveal"><h3>Linux Systems</h3><p>Processes, signals, pipes, system calls, GDB debugging and Makefiles.</p></li>
+            <li class="card reveal"><h3>Networking</h3><p>TCP/IP and UDP sockets, including a select()-based multi-client server.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Technical skills</p>
+          <h2 id="skills-title">What I work with</h2>
+        </header>
+        <div class="skills-grid">
+          <article class="card skill-card reveal">
+            <h3>Programming</h3>
+            <ul class="badges"><li>Advanced C</li><li>Embedded C</li><li>Shell Scripting</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Embedded Systems</h3>
+            <ul class="badges"><li>PIC18F4580</li><li>Arduino</li><li>ESP8266</li><li>GPIO</li><li>UART</li><li>I2C</li><li>ADC</li><li>CAN Bus</li><li>Timers</li><li>Interrupts</li><li>16x2 CLCD</li><li>7-Segment Display</li><li>Matrix Keypad</li><li>Sensor Interfacing</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Data Structures &amp; Algorithms</h3>
+            <ul class="badges"><li>Arrays</li><li>Strings</li><li>Linked Lists</li><li>Stacks</li><li>Queues</li><li>Hash Tables</li><li>Searching &amp; Sorting</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Operating Systems</h3>
+            <ul class="badges"><li>Linux Fundamentals</li><li>Shell Commands</li><li>System Calls</li><li>Process Handling</li><li>Signal Handling</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Networking</h3>
+            <ul class="badges"><li>TCP/IP Sockets</li><li>UDP Sockets</li><li>select() Multi-Client Servers</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Tools &amp; Platforms</h3>
+            <ul class="badges"><li>GCC</li><li>GDB</li><li>Makefiles</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>MPLAB X</li><li>XC8 Compiler</li><li>Ubuntu Linux</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Core Concepts</h3>
+            <ul class="badges"><li>Pointers</li><li>Dynamic Memory Allocation</li><li>Bit Manipulation</li><li>Endianness</li><li>Debugging</li><li>Root-Cause Analysis</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Experience &amp; training</p>
+          <h2 id="exp-title">Where I'm building my skills</h2>
+        </header>
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <span class="dot" aria-hidden="true"></span>
+            <article class="card">
+              <header class="exp-head">
+                <div>
+                  <h3>Embedded Systems Trainee</h3>
+                  <p class="company">Emertxe Information Technologies, Bangalore</p>
+                </div>
+                <p class="date">Feb 2026 – Present</p>
+              </header>
+              <ul class="checklist">
+                <li>Enrolled in a Government of India-certified Advanced Embedded Systems program (Skill India/NSDC, Embedded Software Engineer QP: ELE/Q1501), covering embedded C, Linux and systems programming.</li>
+                <li>Designed and built 9 independent C projects, from linked-list arithmetic and binary file parsing to UDP/TCP networking, process/signal control, lexical analysis and CAN-bus firmware, taking each from a blank file to a working, debugged program.</li>
+                <li>Debugged multi-process and signal-driven C programs daily using GDB, and version-controlled all project work through Git-based code reviews.</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section alt" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Featured projects</p>
+          <h2 id="projects-title">Things I've built</h2>
+        </header>
+
+        <!-- Filter buttons (handled in script.js) -->
+        <div class="filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="embedded" aria-pressed="false">Embedded</button>
+          <button class="filter" data-filter="systems" aria-pressed="false">Systems</button>
+          <button class="filter" data-filter="networking" aria-pressed="false">Networking</button>
+        </div>
+
+        <!--
+          Each project card has data-category for filtering.
+          Links currently point to the GitHub profile. To link a specific repo later, replace the href, e.g.
+          https://github.com/Bala9486/your-repo-name
+        -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <article class="card project reveal" data-category="embedded">
+            <span class="tag">Embedded · Emertxe</span>
+            <h3>CAN-Based Automotive Dashboard (3-ECU Network)</h3>
+            <p>Three PIC18F4580 ECU nodes exchanging live vehicle data over a CAN bus and showing it on a dashboard display.</p>
+            <ul class="checklist">
+              <li>ECU1 reads speed (ADC) and gear (matrix keypad); ECU2 reads RPM and indicator input; ECU3 is the dashboard node.</li>
+              <li>Configured the CAN module at register level (BRGCON1–3, operating modes, RX buffer mode) with 11-bit message IDs.</li>
+              <li>ECU3 decodes frames by ID and shows speed, gear, RPM and indicator state on a 16x2 CLCD.</li>
+            </ul>
+            <ul class="badges small"><li>Embedded C</li><li>PIC18F4580</li><li>CAN Bus</li><li>ADC</li><li>MPLAB X / XC8</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="systems">
+            <span class="tag">Systems · Emertxe</span>
+            <h3>Minishell – Custom Unix Shell</h3>
+            <p>Command-line shell in C with builtin commands, multi-stage pipelines and job control.</p>
+            <ul class="checklist">
+              <li>fork/exec/waitpid process management with builtins: cd, pwd, echo, exit, jobs, fg, bg.</li>
+              <li>N-stage pipelines using dynamically created pipes with correct descriptor cleanup.</li>
+              <li>Job control via SIGTSTP/SIGCONT, plus SIGINT handling to keep the prompt on Ctrl+C.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>Process Management</li><li>Signals</li><li>Pipes</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="networking">
+            <span class="tag">Networking · Emertxe</span>
+            <h3>Multi-Client Chat Server</h3>
+            <p>TCP chat application supporting multiple simultaneous clients with real-time broadcast.</p>
+            <ul class="checklist">
+              <li>Handles up to 10 concurrent clients on a single thread using select().</li>
+              <li>Broadcasts every message to all connected peers.</li>
+              <li>Manages connect/disconnect events with a dynamic socket array.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>Socket Programming</li><li>TCP/IP</li><li>select()</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="systems">
+            <span class="tag">Systems · Emertxe</span>
+            <h3>Lexical Analyzer for C Source Code</h3>
+            <p>Reads a source file, splits it into tokens, classifies each one and reports lexical errors.</p>
+            <ul class="checklist">
+              <li>Classifies keywords, identifiers, operators, symbols and decimal, octal, hex and binary literals.</li>
+              <li>Flags malformed tokens such as 1pugal, 0189, 0x12G and 0b1021, with a running error count.</li>
+              <li>Tracks unbalanced brackets and unterminated quotes; split into lexer.c, lexer.h and main.c.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>File Handling</li><li>String Handling</li><li>Modular Design</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="systems">
+            <span class="tag">Systems · Emertxe</span>
+            <h3>Arbitrary Precision Calculator (APC)</h3>
+            <p>Arithmetic on integers of unlimited length by storing digits in a linked list.</p>
+            <ul class="checklist">
+              <li>Digit-by-digit linked-list representation beyond native C integer limits.</li>
+              <li>Addition, subtraction, multiplication and division implemented from scratch.</li>
+              <li>Carry/borrow propagation across nodes for all four operations.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>Linked Lists</li><li>Dynamic Memory</li><li>Pointers</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="systems">
+            <span class="tag">Systems · Emertxe</span>
+            <h3>Image Steganography (LSB)</h3>
+            <p>Hides and retrieves secret text inside BMP images using Least Significant Bit encoding.</p>
+            <ul class="checklist">
+              <li>Encode and decode modes with no visible change to image quality.</li>
+              <li>Parses raw BMP headers and pixel data directly.</li>
+              <li>Bitwise operations modify only the least significant bits.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>Bitwise Operations</li><li>File Handling</li><li>Makefiles</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="systems">
+            <span class="tag">Systems · Emertxe</span>
+            <h3>MP3 Tag Reader &amp; Editor</h3>
+            <p>CLI tool to view and edit ID3v2 metadata directly in MP3 files.</p>
+            <ul class="checklist">
+              <li>Parses ID3v2 frames from raw binary data with no external libraries.</li>
+              <li>View and in-place edit modes for title, artist, album, year, genre and comment.</li>
+              <li>Handles endian conversion and frame sizes to preserve the original binary layout.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>Binary File I/O</li><li>Structures</li><li>CLI Arguments</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="systems">
+            <span class="tag">Systems · Emertxe</span>
+            <h3>Address Book Management System</h3>
+            <p>Command-line contact manager with add, search, edit, delete and persistent storage.</p>
+            <ul class="checklist">
+              <li>One reusable record structure shared across all operations.</li>
+              <li>File-based persistence tested against a store of 100 contacts.</li>
+              <li>Input validation and string manipulation in search, edit and delete.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>Structures</li><li>File Handling</li><li>Pointers</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="networking">
+            <span class="tag">Networking · In progress</span>
+            <h3>TFTP Client-Server File Transfer</h3>
+            <p>UDP-based Trivial File Transfer Protocol (RFC 1350) system, currently in the design/build phase.</p>
+            <ul class="checklist">
+              <li>Designed the shared packet protocol: RRQ, WRQ, DATA, ACK and ERROR opcodes.</li>
+              <li>Architected the server request loop and client commands: connect, put, get, disconnect.</li>
+              <li>Implementing 512-byte DATA/ACK transfer with timeout-based retransmission.</li>
+            </ul>
+            <ul class="badges small"><li>C</li><li>UDP Sockets</li><li>Protocol Design</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+
+          <article class="card project reveal" data-category="embedded">
+            <span class="tag">Embedded · Academic</span>
+            <h3>IoT-Based Smart Energy Meter</h3>
+            <p>Monitors voltage, current and power in real time and sends readings to a cloud IoT platform.</p>
+            <ul class="checklist">
+              <li>Calibrated voltage and current sensors against known reference loads.</li>
+              <li>Wi-Fi link between the microcontroller and the IoT platform for live data.</li>
+              <li>Computed real-time power (W) and cumulative energy (kWh) from sensor data.</li>
+            </ul>
+            <ul class="badges small"><li>Arduino Uno</li><li>ESP8266/NodeMCU</li><li>ACS712</li><li>Blynk/ThingSpeak</li></ul>
+            <a class="proj-link" href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> More on GitHub</a>
+          </article>
+        </div>
+        <p class="note reveal">Live demos are not listed because these are firmware and command-line projects.</p>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education" aria-labelledby="edu-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Education</p>
+          <h2 id="edu-title">Academic background</h2>
+        </header>
+        <div class="edu-grid">
+          <article class="card reveal">
+            <p class="date">2021 – 2025</p>
+            <h3>B.E., Electrical and Electronics Engineering</h3>
+            <p class="company">Ganadipathy Tulsi's Jain Engineering College</p>
+            <p class="score">CGPA 7.53 / 10</p>
+          </article>
+          <article class="card reveal">
+            <p class="date">2018 – 2021</p>
+            <h3>Diploma in Electrical and Electronics Engineering</h3>
+            <p class="company">Guru Raagavindhra Polytechnic College</p>
+            <p class="score">80%</p>
+          </article>
+          <article class="card reveal">
+            <p class="date">2018</p>
+            <h3>SSLC (10th Standard)</h3>
+            <p class="company">Jothi Higher Secondary School</p>
+            <p class="score">71.8%</p>
+          </article>
+        </div>
+
+        <!-- Certifications -->
+        <header class="section-head reveal sub-head">
+          <p class="eyebrow">Certification</p>
+          <h2>Certifications &amp; achievements</h2>
+        </header>
+        <article class="card cert reveal">
+          <div>
+            <h3>Advanced Embedded Systems Program (in progress)</h3>
+            <p class="company">Government of India – Skill India / NSDC · Embedded Software Engineer · QP: ELE/Q1501</p>
+            <p>Delivered through Emertxe Information Technologies, Bangalore. Covers embedded C, Linux and systems programming.</p>
+          </div>
+          <span class="status">In progress</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section alt" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let's work together</h2>
+          <p class="lead">I'm open to entry-level Embedded Software and Firmware Engineer roles.</p>
+        </header>
+
+        <div class="contact-grid">
+          <ul class="contact-info reveal">
+            <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:haribala8049@gmail.com">haribala8049@gmail.com</a></li>
+            <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+919080094362">+91 9080094362</a></li>
+            <li><svg class="icon"><use href="#i-pin"/></svg><span>Bengaluru, India</span></li>
+            <li><svg class="icon"><use href="#i-linkedin"/></svg><a href="https://linkedin.com/in/balakumar-h-49a759222" target="_blank" rel="noopener noreferrer">linkedin.com/in/balakumar-h-49a759222</a></li>
+            <li><svg class="icon"><use href="#i-github"/></svg><a href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer">github.com/Bala9486</a></li>
+          </ul>
+
+          <form class="card contact-form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required minlength="2" aria-describedby="name-err" />
+              <p class="error" id="name-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-err" />
+              <p class="error" id="email-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required minlength="3" aria-describedby="subject-err" />
+              <p class="error" id="subject-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required minlength="10" aria-describedby="message-err"></textarea>
+              <p class="error" id="message-err" role="alert"></p>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="note">
+              <strong>Note:</strong> a static website cannot send email by itself. A backend or a form service
+              (for example Formspree or Netlify Forms) is required for real delivery. Until one is connected,
+              this form validates your input and opens your email app with the message pre-filled.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Balakumar H. All rights reserved.</p>
+      <ul class="social" aria-label="Footer social links">
+        <li><a href="https://github.com/Bala9486" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a></li>
+        <li><a href="https://linkedin.com/in/balakumar-h-49a759222" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="mailto:haribala8049@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg class="icon"><use href="#i-up"/></svg></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
